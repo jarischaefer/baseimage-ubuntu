@@ -1,8 +1,8 @@
-FROM ubuntu:20.04
+FROM arm32v7/ubuntu:20.04
 
 ADD pre_install /
 
-RUN bash /build/install && rm -r /build
+RUN chmod +x /build/install && /build/install && rm -r /build
 
 ADD post_install /
 
